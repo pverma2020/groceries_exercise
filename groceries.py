@@ -30,18 +30,41 @@ products = [
 
 products_count = len(products)
 
-print("--------------")
-print("THERE ARE " + str(products_count) + " PRODUCTS:")
-print("--------------")
+#print("--------------")
+#print("THERE ARE " + str(products_count) + " PRODUCTS:")
+#print("--------------")
 
 def sort_by_name(any_product):
     return any_product["name"]
 sorted_products = sorted(products, key=sort_by_name)
 
-for item in sorted_products:
+#for item in sorted_products:
     #print(type(item))
-    price_usd = " (${0:.2f})".format(item["price"])
-    print("+" + item["name"] + price_usd)
+    #price_usd = " (${0:.2f})".format(item["price"])
+    #print("+" + item["name"] + price_usd)
+
+
+#
+#Part 2
+#
+departments = []
+for item in products:
+    #print(item["department"])
+    #epartments.append(item["department"])
+    if item["department"] not in departments:
+        departments.append(item["department"])
+
+
+departments_count = len(departments)
+
+print("--------------")
+print("THERE ARE " + str(departments_count) + " DEPARTMENTS:")
+print("--------------")
+
+for d in departments:
+    print(d)
+
+
 
 #--------------
 #THERE ARE 20 PRODUCTS:
@@ -66,6 +89,9 @@ for item in sorted_products:
 # + Saline Nasal Mist ($16.00)
 # + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 # + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
+
+
+
 #--------------
 #THERE ARE 10 DEPARTMENTS:
 #--------------
