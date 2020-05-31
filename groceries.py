@@ -50,18 +50,20 @@ sorted_products = sorted(products, key=sort_by_name)
 departments = []
 for item in products:
     #print(item["department"])
-    #epartments.append(item["department"])
-    if item["department"] not in departments:
-        departments.append(item["department"])
+    departments.append(item["department"])
+   # if item["department"] not in departments:
+   #     departments.append(item["department"])
+
+unique_departments = list(set(departments))
 
 
-departments_count = len(departments)
+departments_count = len(unique_departments)
 
 print("--------------")
 print("THERE ARE " + str(departments_count) + " DEPARTMENTS:")
 print("--------------")
 
-for d in departments:
+for d in unique_departments:
     print(d)
 
 
